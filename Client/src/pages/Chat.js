@@ -9,7 +9,7 @@ const Chat = () => {
     const { name, room } = queryString.parse(search)
 
     useEffect(() => {
-        socket = io("http://localhost:4000")
+        // socket = io("http://localhost:4000/")
     }, [])
 
 
