@@ -1,19 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Join from "./components/Join";
-import Chat from "./components/Chat";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+// import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Home from './components/Home';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path="/" component={Join} />
-          <Route path="/chat" component={Chat} />
-        </Routes>
-      </Router>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} /></Route>
+        <Route path="blogs" element={<Blogs />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
